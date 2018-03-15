@@ -6,6 +6,7 @@ exports.handler = function(event, context, callback) {
 		body: JSON.stringify({
 			message: 'Go SLAppForge Sigma! Your function executed successfully!',
 			input: event,
+			context: context,
 		}),
 	};
 
