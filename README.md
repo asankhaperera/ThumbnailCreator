@@ -1,0 +1,2 @@
+# ThumbnailCreator
+Thumbnail Creator
