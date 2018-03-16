@@ -13,12 +13,16 @@ exports.handler = function(event, context, callback) {
 		"isBase64Encoded": 0,
 		"statusCode": 200,
 		"headers": {
-    		"Content-Type: ": "image/png"
-  		}
+    		//"Content-Type: ": "image/png"
+  		},
+		"body": JSON.stringify({
+			message: "Invoked",
+			input: event
+		})
 	};
 
 
-	gm(response.Body).size(function (err, size) {
+	/*gm(response.Body).size(function (err, size) {
 		// Infer the scaling factor to avoid stretching the image unnaturally.
 		let scalingFactor = Math.min(
 			MAX_WIDTH / size.width,
@@ -36,7 +40,7 @@ exports.handler = function(event, context, callback) {
 					next(null, response.ContentType, buffer);
 				}
 			});
-	});
+	});*/
 
 	callback(null,response);
 }
